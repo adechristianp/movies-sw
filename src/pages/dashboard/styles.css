@@ -1,0 +1,46 @@
+.container {
+    text-align: center;
+}
+
+.title-container {
+    display: flex;
+    gap: 16px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px;
+    width: 300px;
+    display: inline-block;
+    transition: box-shadow .1s;
+}
+
+.card:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.3); 
+}
+  
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+  
+.card-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+  
+.card-description {
+    color: #555;
+}
+  
+.card-price {
+    font-weight: 600;
+}
+
+.card-button {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
