@@ -2,11 +2,13 @@ import './styles.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     label?: string;
+    testId?: string;
+    onClick?(): any;
 }
 
-const DefaultButton: React.FC<ButtonProps> = ({ label, ...props }) => {
+const DefaultButton: React.FC<ButtonProps> = ({ label, onClick, testId = 'button', ...props  }) => {
     return (
-        <button className='button' {...props}>
+        <button data-testid={testId} className='button' onClick={onClick} {...props}>
             {label}
         </button>
     );

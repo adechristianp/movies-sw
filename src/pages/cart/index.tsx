@@ -25,13 +25,13 @@ const CartPage = () => {
                             <div className="container-item-detail">
                                 <img className='cart-image' src={e.movie.image} alt={e.movie.title} />
                                 <div>
-                                    <h3 className='cart-item-title'>{e.movie.title}</h3>
+                                    <h3 data-testid='cart-item-title' className='cart-item-title'>{e.movie.title}</h3>
                                     <p className='cart-item-detail'>Price: {moneyFormat(e.movie.price)}</p>
                                     <p className='cart-item-detail'>Quantity: {e.quantity}</p>
                                     <p className='cart-item-detail-total'>Total: {moneyFormat(e.movie.price * e.quantity)}</p>
                                 </div>
                             </div>
-                            <DefaultButton style={{backgroundColor: '#fe2828'}} label='Remove' onClick={() => removeFromCart(e.movie.episode_id)}/>
+                            <DefaultButton data-testid={`cart-item-button${idx}`} style={{backgroundColor: '#fe2828'}} label='Remove' onClick={() => removeFromCart(e.movie.episode_id)}/>
                         </div>
                     ))}
                 </div>

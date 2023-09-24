@@ -27,7 +27,7 @@ const DetailPage = () => {
           image: 'https://c8.alamy.com/comp/EXRG0F/1970s-usa-star-wars-film-poster-EXRG0F.jpg'
         });
       } catch (error) {
-        console.error('Error fetching movie details:', error);
+        console.log('Error fetching movie details:', error);
       }
     };
     if(state === null) fetchData();

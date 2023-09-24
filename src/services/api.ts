@@ -7,7 +7,7 @@ export const fetchMovies = async () => {
     const response = await axios.get(`${BASE_URL}films`);
     return response.data.results;
   } catch (error) {
-    console.error('Failed fetching:', error);
+    console.log('Failed fetching:', error);
     throw error;
   }
 };
@@ -17,8 +17,8 @@ export const fetchMovieDetails = async (movieId: string) => {
       const response = await axios.get(`${BASE_URL}films/${movieId}`);
       return response.data;
     } catch (error) {
-      console.error('Error fetching movie details:', error);
+      console.log('Error fetching movie details:', error);
       throw error;
     }
-  };
+};
   

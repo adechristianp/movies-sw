@@ -57,7 +57,7 @@ export const AppProvider = (props: {children: any}) => {
                   }));
                 setMovies(movieDataCustom);
             } catch (error) {
-                console.error('Error fetching movies:', error);
+                console.log('Error fetching movies:', error);
             }
             setLoading(false);
         };
@@ -67,15 +67,15 @@ export const AppProvider = (props: {children: any}) => {
 
     return (
         <AppContext.Provider value={{ movies, loading, cart, addToCart, removeFromCart, clearCart }}>
-        {props.children}
+            {props.children}
         </AppContext.Provider>
     );
 };
 
 export const useApp = (): AppContextType => {
-  const context = useContext(AppContext);
-  if (!context) {
-    throw new Error('Error useApp Provider');
-  }
-  return context;
+    const context = useContext(AppContext);
+    if (!context) {
+        throw new Error('Error useApp Provider');
+    }
+    return context;
 };

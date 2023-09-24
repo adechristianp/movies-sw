@@ -18,6 +18,11 @@ function Routes() {
           <DashboardPage />
         </Layout>
       ),
+      errorElement: (
+        <Layout titleHeader="Page Not Found">
+          <NotFoundPage />
+        </Layout>
+      )
     },
     {
       path: "/detail/:id",

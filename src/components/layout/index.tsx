@@ -4,7 +4,7 @@ import CartIcon from '../icons/cart';
 import { Link, useNavigate } from 'react-router-dom';
 import ArrowLeftIcon from '../icons/arrow-left';
 
-const Layout = (props: {children: ReactNode, titleHeader: string, canBack?: boolean}) => {
+const Layout = (props: {children?: ReactNode, titleHeader?: string, canBack?: boolean}) => {
     const {children, titleHeader, canBack = false} = props;
     const navigate = useNavigate();
     const header = useMemo(()=> [
@@ -34,7 +34,7 @@ const Layout = (props: {children: ReactNode, titleHeader: string, canBack?: bool
             </div>
             <div className="title-container">
                 <div className='back-button-container'>
-                    {canBack && <div className='back-button' onClick={() => navigate(-1)}><ArrowLeftIcon /></div>}
+                    {canBack && <div data-testid="back-button" className='back-button' onClick={() => navigate(-1)}><ArrowLeftIcon /></div>}
                 </div>
                 <h2>{titleHeader}</h2>
             </div>
